@@ -1,0 +1,103 @@
+html {
+    background-image: url('v760-toon-94.jpg');
+    background-size: cover; /* This property ensures the entire image fits */
+    background-repeat: no-repeat; /* This property prevents the image from repeating */
+    background-position: center;  
+
+}
+body {
+    color:midnightblue;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color:midnightblue;
+    text-align: center;
+}
+.intro-container {
+    display: flex;
+    width: 100%;
+    align-items: top;
+}
+
+.video-column {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 5px;
+
+}
+
+.intro-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+.caption {
+    color: midnightblue;
+    font-size: 12px; /* You can use any valid CSS unit like px, em, rem, etc. */
+    font-style: italic;
+       
+}
+
+ 
+  
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top;
+}
+
+.center {
+    margin: 0 auto;
+    margin-bottom: -3px;
+    display: flex;
+    justify-content: center;
+}
+
+.center iframe {
+    width: 85%; /* Maintain the width you set */
+    height: 550px; /* Maintain the height you set */
+    border: none; /* Remove the border */
+    margin-top: 0; /* Remove any margin above the iframe */
+    margin-bottom: 0; /* Remove any margin below the iframe */
+    display: block; /* Ensures that the iframe is a block-level element */
+}
+
+.specific {
+    margin-top: -200px; /* Adjust the bottom margin as needed */
+    /* You can also set margin-left and margin-right if needed */
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unemployment rate study</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <h1>An Analysis of NASA's Near Earth Objects</h1>
+    <div class="intro-container">
+        <div class="video-column">
+        <video width="540" height="360" controls>
+            <source src="PIA24568.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+            <div class="caption">
+                <p>shows an asteroids predicted orbit before colliding with earth's atmosphere. <a href="https://www.jpl.nasa.gov/images/pia24568-animation-of-asteroid-2022-eb5s-orbit-before-hitting-earths-atmosphere">video here</a> 
+                </p>
+            </div>
+        </div>
+        <div class="intro-column">
+        <h2>Introduction</h2>
+        <p>This dataset compiles a list of asteroids that NASA has identified as 
+            Near-Earth Objects (NEOs), highlighting those that are closest to our planet and could 
+            potentially cause harm. In outer space, there are an infinite amount of objects, some of 
+            which are much closer to Earth than most people imagine. For example, even a distance as 
+            seemingly large as an asteroid being 70,000 kilometers is quite small when the astronomical 
+            scale is taken into account. As a result, harmful asteroids at this distance can 
+            pose a threat and disrupt many natural phenomena. This dataset allows viewers to gain 
+            insight into the proximity and characteristics of NEOs, increasing awareness of potential 
+            harmful objects. </p>
+        </div>
+      </div>
+
+    <p>For more information on the characteristics of near earth objects, read 
+         <a href="https://www.science.org/doi/10.1126/science.288.5474.2190">NEO Basics</a>, 
+         which provides information on the basics of near Earth objects. Read the following
+         <a href="https://www.livescience.com/what-are-potentially-hazardous-asteroids">paper</a> 
+        to understand the dangers of hazardous Near Earth Objects.</p>
+
+    <h3>Our Data and Preprocessing</h3>
+
+    <p> This dataset contains descriptive information regarding objects in space near Earth. The CSV file 
+        contains 10 columns and 90,614 rows of data to work with. It contains important information for 
+        each asteroid that was monitored such as its name, approximate minimum size, approximate maximum 
+        size, distance it missed Earth by, relative velocity, magnitude, and if it was presumed dangerous 
+        or not. This dataset contains both categorical and numerical forms of data to work with and contains 
+        a minimal amount of missing data. This <a href="https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects">dataset</a> 
+        was acquired from Kaggle. They pulled this data from the NASA Open API as well as NEO Earth Close Approaches. This dataset provides necessary information to 
+        perform an analysis on the potential dangers of objects near Earth. However, it only contains data 
+        regarding Earth so we cannot make any comparisons to other planets as well with this dataset. </p>
+        
+    <p>To preprocess the data, we cut the size down to 2000 rows, as this makes visuallzing the features of the 
+        data much simpler. In addition, we created a 'year' column by extracting the year from the 'name' column.
+        after this process was complete, we ultimately decided to drop the 'name' column as the name only contians the NEO ID and
+        year of the NEO, both of which already exist as columns in our dataframe. After preprocessing was complete,
+        our data included the following features:  </p>
+
+    
+
+        <div class="center">
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">Variable Name</th>
+                <th class="tg-0lax">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">id</td>
+                <td class="tg-0lax">NEO ID</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">year</td>
+                <td class="tg-0lax">Year the NEO was observed</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">est_diameter_min</td>
+                <td class="tg-0lax">estimated minimum diameter of the NEO</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">est_diameter_max</td>
+                <td class="tg-0lax">estimated maximum diameter of the NEO </td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">miss_distance</td>
+                <td class="tg-0lax">distance the NEO missed earth by</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">orbiting_body</td>
+                <td class="tg-0lax">what planet the NEO orbits</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">sentry_object</td>
+                <td class="tg-0lax">whether or not it was included in sentry (a collision monitoring system)</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">absolute_magnitude</td>
+                <td class="tg-0lax">describes <a href="https://homepages.uc.edu/~hansonmm/ASTRO/LECTURENOTES/W03/Lec6/Page3.html">intrinisic luminosity</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">hazardous</td>
+                <td class="tg-0lax">indicates whether or not the NEO was harmful</td>
+              </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <h3>Overview of NEOs</h3>
+        
+                   
+        </div>
+        
+        <h3> Relative Velocity of Hazardous Objects vs. Estimated Minimum Diameter Colored By Hazardous</h3>
+        <div class = 'center'>
+          <iframe src="velocity_vs_diameter.html" width="85%" height="550px" frameborder="0"></iframe>
+      </div>
+      <div class = 'text'>
+        <p> insert analysis 
+        </p>
+    </div>     
+        </div>
+
+        <h3>Relationship Between Relative Velocity and Miss Distance</h3>
+        <div class = 'center'>
+          <iframe src="Correlation_Velocity_Distance.html" width="85%" height="550px" frameborder="0"></iframe>
+      </div>
+      <div class = 'text'>
+        <p class="specific"> insert analysis 
+        </p>
+    </div>     
+        </div>
+
+
+        <h3>Average Miss distance Per Year</h3>
+        
+        <div class = 'container'>
+          <div class = 'image'>
+              <!-- <iframe src="histogram/index.html" width="100%" height="400px" frameborder="0"></iframe>-->
+              <img src="d3.png" width="100%" height="500px" frameborder="0"></iframe>
+          </div>
+          <div class = 'text'>
+              <p> This figure visualizes the years with the highest and lowest average miss distances relative to Earth. 
+               The year 1960 has the highest average miss distance, suggesting that during this year, the NEOs passing by the Earth were generally further away than in other years. 
+              Conversely, 1950 had the lowest average miss distance, indicating that NEOs were, on average, significantly closer to Earth during this period.
+              However, most years have a similar average miss distance, especially from 2004-2022. This can be used as a baseline in order to predict miss distance for future years, since the general trend of miss distances may remain stable over time. 
+                
+              </p>
+          </div>            
+      </div>
+      
+
+        
+            
+        <h3>Conclusion and Future Directions</h3>
+
+        <p>
+            Overall, our analysis provides valuable insights into the trends and characteristics of Near Earth Objects
+            From a visual standpoint, hazardous NEOs tend to have a higher velocity relative to non-hazardous objects. 
+            While our remaining visualizations show some patterns related to hazardous objects, it is unclear if these 
+            patterns are significant or not.
+
+        </p>
+        <p>
+            To better understand how our features work together, we would like to 
+            incorporate a predictive model to see if features of hazardous objects are
+            distinguishable from features of non-hazardous objects. 
+        </p>
+
+        <h4><strong>Sources:</strong></h4>
+            
+            
+            <ul>
+                <li>Background Image: <a href="https://www.freepik.com/free-vector/colorful-galaxy-watercolor-doodle-frame-pastel-background_16331095.htm#fromView=image_search_similar&page=1&position=11&uuid=7eb222e5-048e-42b0-924f-400f7a4a17ca">Image by rawpixel.com on Freepik</a></li>
+                <li>Kaggle Source: <a href="https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects"> NASA - Nearest Earth Objects Dataset</a></li>
+                <li><a href="https://api.nasa.gov/"> NASA Open API</a></li>
+                <li><a href="https://cneos.jpl.nasa.gov/ca/"> NEO Earth Close Approaches</a></li>
+            </ul>
+            
+       
+
+
+</body>
+</html>
